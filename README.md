@@ -8,3 +8,15 @@ To Install:
 npm install
 npm start
 ```
+
+To run tests:
+
+```bash
+npm test
+```
+
+To run code coverage:
+
+```bash
+npm run coverage
+```
