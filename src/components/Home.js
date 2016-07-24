@@ -1,4 +1,5 @@
 import React from 'react'
+import About from './About.js'
 
 export default class Home extends React.Component {
 
@@ -7,7 +8,10 @@ export default class Home extends React.Component {
   }
   render() {
     return (<div>
-            <p>Welcome to the Home Page...</p>
+            <div className="page-header">
+              <h1>ICC Voting App</h1>
+            </div>
+            <About />
           </div>);
   }
 

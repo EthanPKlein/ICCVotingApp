@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router'
+import Header from './Header.js'
+import Footer from './Footer.js'
 
 export default class MainLayout extends React.Component {
 
@@ -7,15 +9,14 @@ export default class MainLayout extends React.Component {
     var myChild = React.cloneElement(this.props.children, {store: this.props.route.store});
 
     return (<div>
-              <span>Header:</span>
-              <Link to="/">Home</Link> |
-              <Link to="/users">Users</Link>
+              <div className="container">
+              <Header />
               <hr/>
-              <div>
-                <h2>Body Content</h2>
+              <div className="container">
                 {myChild}
               </div>
-              <div><hr/>footer</div>
+              <Footer />
+              </div>
             </div>);
   }
 

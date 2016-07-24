@@ -5,6 +5,8 @@ import { Router, Route, Link, browserHistory, RouteHandler } from 'react-router'
 import configureStore from './store/configureStore';
 import MainLayout from './components/MainLayout';
 import Home from './components/Home';
+import Header from './components/Header';
+import Locations from './components/Locations';
 import UserContainer from './containers/UserContainer';
 import UserDetails from './components/UserDetails';
 
@@ -15,6 +17,7 @@ render(
       <Route component={MainLayout} store={store}>
       <Route path="/" component={Home} />
       <Route path="/users" component={UserContainer} />
+      <Route path="/locations" component={Locations} />
       <Route path="/users/:id" component={UserDetails} />
     </Route>
   </Router>
