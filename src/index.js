@@ -7,6 +7,7 @@ import MainLayout from './components/MainLayout';
 import Home from './components/Home';
 import Header from './components/Header';
 import Locations from './components/Locations';
+import SuggestLocation from './components/SuggestLocation';
 import UserContainer from './containers/UserContainer';
 import UserDetails from './components/UserDetails';
 
@@ -18,6 +19,7 @@ render(
       <Route path="/" component={Home} />
       <Route path="/users" component={UserContainer} />
       <Route path="/locations" component={Locations} />
+      <Route path="/suggestLocation" component={SuggestLocation} />
       <Route path="/users/:id" component={UserDetails} />
     </Route>
   </Router>

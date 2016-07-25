@@ -18,7 +18,7 @@ export default class Header extends React.Component {
                 <Link to="/locations" className="nav-link" href="#">View Locations</Link>
               </li>
               <li>
-                <Link to="/" className="nav-link" href="#">Suggest a Location</Link>
+                <Link to="/suggestLocation" className="nav-link" href="#">Suggest a Location</Link>
               </li>
               <li>
                 <Link to="/" className="nav-link" href="#">Admin</Link>

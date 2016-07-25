@@ -1,16 +1,21 @@
 {
-  "list": [
+  "date": "August 15",
+  "time": "6:00pm",
+  "locations": [
     {
-      "name": "Test User",
-      "email": "john.doe@email.com"
+      "name": "Magic Mountain",
+      "address": "8350 Lyra Dr, Columbus, OH 43240",
+      "imageUrl": "http://www.bwcolumbushotel.com/images/CommanFile/EVTMagic_Mountain_PolarisBest_Western_Columbus_North_Hotel_-_Magic_Mountain_Polaris.jpg"
     },
     {
-      "name": "Foo Bar",
-      "email": "foo.bar@email.com"
+      "name": "Buffalo Wild Wings",
+      "address": "2151 N High St, Columbus, OH 43201",
+      "imageUrl": "http://www.collegebarscene.com/images/bars/bw3OSU.jpg"
     },
     {
-      "name": "Hello World",
-      "email": "hello.world@email.com"
+      "name": "Champions Golf Course",
+      "address": "3900 Westerville Road, Columbus, OH 43224",
+      "imageUrl": "http://imavex.vo.llnwd.net/o18/clients/columbusgolf/images/Golf_Course/course_overview_champions.jpg"
     }
   ]
 }
