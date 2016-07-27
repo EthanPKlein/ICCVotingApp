@@ -39,7 +39,7 @@ export default class SuggestLocation extends React.Component {
             <small className="text-muted">(Optional) submit the URL for an image depicting this venue.</small>
           </fieldset>
 
-          <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+          <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
 
         </form>
 

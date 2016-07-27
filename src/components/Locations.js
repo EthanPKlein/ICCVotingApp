@@ -2,11 +2,12 @@ import React from 'react'
 import VoteInformation from './VoteInformation.js'
 import Location from './Location.js'
 import EnterEmail from './EnterEmail.js'
+import Upvote from './Upvote.js'
 
 export default class Locations extends React.Component {
 
   constructor(props) {
-    console.log("constructing...");
+
     super(props);
     //this.renderUser = this.renderUser.bind(this);
     this.renderLocation = this.renderLocation.bind(this);
@@ -64,7 +65,12 @@ export default class Locations extends React.Component {
   }
 
   renderLocation(location, i) {
-    return(<Location key={i} location={location}/>);
+    return(
+      <div key={i}>
+        <Location location={location} />
+        <Upvote name={location.name} id={location.id}/>
+      </div>
+    );
   }
 
 }
