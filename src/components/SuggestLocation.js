@@ -23,18 +23,18 @@ export default class SuggestLocation extends React.Component {
         <form>
 
           <fieldset className="form-group">
-            <label for="name">Venue Name</label>
+            <label htmlFor="name">Venue Name</label>
             <input type="text" className="form-control" id="name" placeholder="Super Fun Center!" />
           </fieldset>
 
           <fieldset className="form-group">
-            <label for="address">Venue Address</label>
+            <label htmlFor="address">Venue Address</label>
             <input type="text" className="form-control" id="address" placeholder="123 Fake Street" />
             <small className="text-muted">Be sure to include city, state, and zip code.</small>
           </fieldset>
 
           <fieldset className="form-group">
-            <label for="image">Image</label>
+            <label htmlFor="image">Image</label>
             <input type="text" className="form-control" id="image" placeholder="www.prettyimage.com/prettything.jpg" />
             <small className="text-muted">(Optional) submit the URL for an image depicting this venue.</small>
           </fieldset>

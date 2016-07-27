@@ -1,6 +1,7 @@
 import React from 'react'
 import VoteInformation from './VoteInformation.js'
 import Location from './Location.js'
+import EnterEmail from './EnterEmail.js'
 
 export default class Locations extends React.Component {
 
@@ -56,6 +57,7 @@ export default class Locations extends React.Component {
           <h1>Suggested Venues</h1>
         </div>
         <VoteInformation time={this.state.time} date={this.state.date} />
+        <EnterEmail />
         <p>Here are all the locations you can vote on:</p>
         {this.state.locations.map(this.renderLocation)}
       </div>);
