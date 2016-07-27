@@ -6,6 +6,13 @@ export default class SuggestLocation extends React.Component {
    super(props);
   }
 
+  handleSubmit(e) {
+     e.preventDefault();
+     console.log("submitting...");
+     //this.props.dispatchItem();
+     //this.setState({name: '', email: ''});
+   }
+
   render() {
     return (
       <div>
@@ -32,7 +39,7 @@ export default class SuggestLocation extends React.Component {
             <small className="text-muted">(Optional) submit the URL for an image depicting this venue.</small>
           </fieldset>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
 
         </form>
 
