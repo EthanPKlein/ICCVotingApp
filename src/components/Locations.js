@@ -5,43 +5,57 @@ export default class Locations extends React.Component {
 
   constructor(props) {
     console.log("constructing...");
-   super(props);
-   //var self = this;
+    super(props);
 
-this.state = {date:'July 30', time:'5:00pm'};
+   //this.state = {date:'July 30', time:'5:00pm'};
 
-   //this.setState({date:'adsf', time:'now'});
-  // console.log("done...");
+   this.state = {
+     "date": "August 15",
+     "time": "6:00pm",
+     "locations": [
+       {
+         "id": 1,
+         "name": "Magic Mountain",
+         "address": "8350 Lyra Dr, Columbus, OH 43240",
+         "imageUrl": "http://www.bwcolumbushotel.com/images/CommanFile/EVTMagic_Mountain_PolarisBest_Western_Columbus_North_Hotel_-_Magic_Mountain_Polaris.jpg"
+       },
+       {
+         "id": 2,
+         "name": "Buffalo Wild Wings",
+         "address": "2151 N High St, Columbus, OH 43201",
+         "imageUrl": "http://www.collegebarscene.com/images/bars/bw3OSU.jpg"
+       },
+       {
+         "id": 3,
+         "name": "Champions Golf Course",
+         "address": "3900 Westerville Road, Columbus, OH 43224",
+         "imageUrl": "http://imavex.vo.llnwd.net/o18/clients/columbusgolf/images/Golf_Course/course_overview_champions.jpg"
+       }
+     ]
+   }
+
 
    //$.getJSON('/data.json').done(function (data) {
-      //store.dispatch({type:'GET_LIST', users: data.list});
-      //console.log(data);
-      //self.setState(data);
-      //self.state = data;
-    //  self.setState(data);
-    //  console.log("JSON Got!");
-    //  console.log(self.state);
-
-  // });
+     //this.state = data;
+    //store.dispatch({type:'GET_LIST', users: data.list});
+   //});
 
   }
 
-
-
   render() {
-    //console.log("rendering...");
-    //console.log(this.state);
     return (
       <div>
         <div className="page-header">
           <h1>Suggested Venues</h1>
         </div>
-        <VoteInformation time={this.state.date}/>
+        <VoteInformation time={this.state.time} date={this.state.date} />
         <p>Here are all the locations you can vote on:</p>
 
-
-
       </div>);
+  }
+
+  renderLocation({name, email}, i) {
+    return (<li key={i}><Link to={`/users/${i}`}>{name}</Link> - {email}</li>);
   }
 
 }
