@@ -1,13 +1,14 @@
 import React from 'react'
 import VoteInformation from './VoteInformation.js'
+import Location from './Location.js'
 
 export default class Locations extends React.Component {
 
   constructor(props) {
     console.log("constructing...");
     super(props);
-
-   //this.state = {date:'July 30', time:'5:00pm'};
+    //this.renderUser = this.renderUser.bind(this);
+    this.renderLocation = this.renderLocation.bind(this);
 
    this.state = {
      "date": "August 15",
@@ -50,12 +51,13 @@ export default class Locations extends React.Component {
         </div>
         <VoteInformation time={this.state.time} date={this.state.date} />
         <p>Here are all the locations you can vote on:</p>
-
+        {this.state.locations.map(this.renderLocation)}
       </div>);
   }
 
-  renderLocation({name, email}, i) {
-    return (<li key={i}><Link to={`/users/${i}`}>{name}</Link> - {email}</li>);
+  renderLocation(location, i) {
+    console.log(location);
+    return(<Location key={i} location={location}/>);
   }
 
 }
