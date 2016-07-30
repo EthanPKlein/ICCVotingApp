@@ -42,7 +42,10 @@ export default class LocationsContainer extends React.Component {
     });
  }
 
- addVote(id, email = "dummyemail@icct.com") {
+ addVote(id) {
+
+   var email = document.getElementById('email').value;
+
    console.log("adding Vote on LocationContainer! ID: " + id + ".  Email: " + email);
 
    var store = this.props.store;

@@ -20,12 +20,22 @@ const locationReducer = function(initialState, action) {
   }
 
   reducer[ADD_VOTE]  = function () {
-    console.log("Reducer is adding vote!");
-    console.log(action);
-    //var newLocation = action.location; // get data from action
-    //return {locations: [
-        //...initialState.locations, newLocation
-      //]}; // return new state
+
+    var oldState = initialState;
+    var newState = Object.assign(oldState);
+
+    for (var i = 0; i < newState.locations.length; i++) {
+      let location = newState.locations[i];
+
+      if (location.id===action.id) {
+        if (!location.votes.includes(action.email)) {
+          location.votes.push(action.email);
+        }
+      }
+
+    }
+
+    return oldState;
   }
 
   reducer[ADD_LOCATION]  = function () {
