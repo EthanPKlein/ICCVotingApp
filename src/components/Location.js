@@ -6,11 +6,6 @@ export default class Location extends React.Component {
    super(props);
   }
 
-  componentDidMount() {
-    console.log("component did mount...");
-    
-  }
-
   render() {
 
     var imageStyle = {
