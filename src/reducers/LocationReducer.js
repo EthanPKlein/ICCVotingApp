@@ -1,10 +1,13 @@
-import {ADD_LOCATION, ADD_VOTE} from '../constants/actionTypes';
+import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS} from '../constants/actionTypes';
 
 const locationReducer = function(initialState, action) {
 
   var reducer = [];
 
   reducer[GET_LOCATIONS]  = function () {
+    console.log("reducer is getting locations.");
+    console.log("action:");
+    console.log(action);
     var newList = action.locations; // get data from action
     console.log('newlist', newList);
     return {
@@ -19,9 +22,9 @@ const locationReducer = function(initialState, action) {
       ]}; // return new state
   }
 
-  reducer[CREATE_LOCATION]  = function () {
-    return action.location;
-  }
+  // reducer[CREATE_LOCATION]  = function () {
+  //   return action.location;
+  // }
 
   if (reducer[action.type]) {
     return reducer[action.type]();
@@ -41,4 +44,4 @@ const locationReducer = function(initialState, action) {
 
 }
 
-export default userReducer;
+export default locationReducer;

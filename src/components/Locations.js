@@ -11,24 +11,24 @@ export default class Locations extends React.Component {
     super(props);
     this.renderLocation = this.renderLocation.bind(this);
 
-   this.state = {
-     "date": "tba",
-     "time": "tba",
-     "locations": []
-   }
+  //  this.state = {
+  //    "date": "tba",
+  //    "time": "tba",
+  //    "locations": []
+  //  }
   }
 
   componentDidMount() {
     console.log("component did mount...");
 
-    var self = this;
-    $.getJSON('/data.json').done(function (data) {
-      self.setState({
-        locations : data.locations,
-        date: data.date,
-        time: data.time
-      });
-    });
+    // var self = this;
+    // $.getJSON('/data.json').done(function (data) {
+    //   self.setState({
+    //     locations : data.locations,
+    //     date: data.date,
+    //     time: data.time
+    //   });
+    // });
 
   }
 
@@ -38,10 +38,10 @@ export default class Locations extends React.Component {
         <div className="page-header">
           <h1>Suggested Venues</h1>
         </div>
-        <VoteInformation time={this.state.time} date={this.state.date} />
+        <VoteInformation time={this.props.time} date={this.props.date} />
         <EnterEmail />
         <p>Here are all the locations you can vote on:</p>
-        {this.state.locations.map(this.renderLocation)}
+        {this.props.locations.map(this.renderLocation)}
       </div>);
   }
 
