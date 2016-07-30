@@ -5,6 +5,7 @@ import * as actions from '../actions/';
 import {bindActionCreators} from 'redux';
 import * as types from '../constants/actionTypes';
 import Locations from '../components/Locations';
+import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS} from '../constants/actionTypes';
 
 export default class LocationsContainer extends React.Component {
 
@@ -17,7 +18,7 @@ export default class LocationsContainer extends React.Component {
      "locations": []
    }
 
-   //this.addUser = this.addUser.bind(this);
+   this.addVote = this.addVote.bind(this);
  }
 
  componentDidMount() {
@@ -41,19 +42,23 @@ export default class LocationsContainer extends React.Component {
     });
  }
 
- // addUser() {
- //   var store = this.props.store;
- //   store.dispatch({
- //         type: 'ADD_USER',
- //         user: {name:"dummy dummy", email:'dummy@icct.com'}
- //       });
- // }
+ addVote(id, email = "dummyemail@icct.com") {
+   console.log("adding Vote on LocationContainer! ID: " + id + ".  Email: " + email);
+
+   var store = this.props.store;
+   store.dispatch({
+     type: ADD_VOTE,
+     id: id,
+     email: email
+   });
+ }
 
  render() {
    return (<Locations
    date={this.state.date}
    time={this.state.time}
    locations={this.state.locations}
+   addVote={this.addVote}
    />);
  }
 

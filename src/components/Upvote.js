@@ -8,6 +8,7 @@ export default class Upvote extends React.Component {
   }
 
   vote(id) {
+    this.props.addVote(id, 'derp@icct.com');
     console.log("vote cast! " + id);
   }
 

@@ -11,24 +11,10 @@ export default class Locations extends React.Component {
     super(props);
     this.renderLocation = this.renderLocation.bind(this);
 
-  //  this.state = {
-  //    "date": "tba",
-  //    "time": "tba",
-  //    "locations": []
-  //  }
   }
 
   componentDidMount() {
     console.log("component did mount...");
-
-    // var self = this;
-    // $.getJSON('/data.json').done(function (data) {
-    //   self.setState({
-    //     locations : data.locations,
-    //     date: data.date,
-    //     time: data.time
-    //   });
-    // });
 
   }
 
@@ -49,7 +35,7 @@ export default class Locations extends React.Component {
     return(
       <div key={i}>
         <Location location={location} />
-        <Upvote name={location.name} id={location.id}/>
+        <Upvote name={location.name} id={location.id} addVote={this.props.addVote}/>
       </div>
     );
   }

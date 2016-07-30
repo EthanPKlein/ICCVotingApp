@@ -19,6 +19,15 @@ const locationReducer = function(initialState, action) {
      };
   }
 
+  reducer[ADD_VOTE]  = function () {
+    console.log("Reducer is adding vote!");
+    console.log(action);
+    //var newLocation = action.location; // get data from action
+    //return {locations: [
+        //...initialState.locations, newLocation
+      //]}; // return new state
+  }
+
   reducer[ADD_LOCATION]  = function () {
     var newLocation = action.location; // get data from action
     return {locations: [
@@ -26,25 +35,11 @@ const locationReducer = function(initialState, action) {
       ]}; // return new state
   }
 
-  // reducer[CREATE_LOCATION]  = function () {
-  //   return action.location;
-  // }
-
   if (reducer[action.type]) {
     return reducer[action.type]();
   } else {
     return {users:[]};
   }
-
-// var userReducer = function(state, action) {
-//   if (state === undefined) {
-//     state = [];
-//   }
-//   if (action.type === ADD_LOCATION) {
-//     state.push(action.location);
-//   }
-//   return state;
-// }
 
 }
 
