@@ -9,7 +9,6 @@ export default class Locations extends React.Component {
   constructor(props) {
 
     super(props);
-    //this.renderUser = this.renderUser.bind(this);
     this.renderLocation = this.renderLocation.bind(this);
 
    this.state = {
