@@ -11,7 +11,7 @@
       "votes": ["eklein@icct.com", "mrnobody@icct.com"]
     },
     {
-      "id": 2,
+      "id": 9,
       "name": "Buffalo Wild Wings",
       "address": "2151 N High St, Columbus, OH 43201",
       "imageUrl": "http://www.buffalowildwings.com/moreexcuses/images/slider-landing.jpg?1469404800022",
@@ -19,7 +19,7 @@
       "votes": ["ILikeChicken@icct.com"]
     },
     {
-      "id": 3,
+      "id": 23,
       "name": "Champions Golf Course",
       "address": "3900 Westerville Road, Columbus, OH 43224",
       "imageUrl": "http://imavex.vo.llnwd.net/o18/clients/columbusgolf/images/Golf_Course/course_overview_champions.jpg",

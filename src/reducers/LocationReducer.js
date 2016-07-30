@@ -9,10 +9,14 @@ const locationReducer = function(initialState, action) {
     console.log("action:");
     console.log(action);
     var newList = action.locations; // get data from action
-    console.log('newlist', newList);
+    var newTime = action.time;
+    var newDate = action.date;
+
     return {
-       locations: newList
-     }; // new state
+       locations: newList,
+       time: newTime,
+       date: newDate
+     };
   }
 
   reducer[ADD_LOCATION]  = function () {

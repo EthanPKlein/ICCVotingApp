@@ -28,7 +28,7 @@ export default class LocationsContainer extends React.Component {
    var store = this.props.store;
    $.getJSON('/data.json').done(function (data) {
       console.log("dispatching...");
-      store.dispatch({type:'GET_LOCATIONS', locations: data.locations});
+      store.dispatch({type:'GET_LOCATIONS', locations: data.locations, date: data.date, time: data.time});
    });
 
    store.subscribe(function() {
