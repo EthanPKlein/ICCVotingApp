@@ -22,16 +22,24 @@ const locationReducer = function(initialState, action) {
   reducer[ADD_VOTE]  = function () {
 
     var oldState = initialState;
-    var newState = Object.assign(oldState);
 
-    for (var i = 0; i < newState.locations.length; i++) {
-      let location = newState.locations[i];
+    for (var i = 0; i < oldState.locations.length; i++) {
+      let location = oldState.locations[i];
+      let voteCast = false;
 
-      if (location.id===action.id) {
-        if (!location.votes.includes(action.email)) {
+      // vote already
+      if (location.votes.includes(action.email)) {
+        console.log("User has already voted!");
+        return oldState;
+      }
+    }
+
+
+      for (var i = 0; i < oldState.locations.length; i++) {
+        let location = oldState.locations[i];
+        if (location.id===action.id) {
           location.votes.push(action.email);
         }
-      }
 
     }
 
