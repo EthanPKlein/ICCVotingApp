@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Locations from './components/Locations';
 import SuggestLocation from './components/SuggestLocation';
 import LocationsContainer from './containers/LocationsContainer';
+import Admin from './components/Admin';
 
 const store = configureStore();
 
@@ -18,6 +19,7 @@ render(
       <Route path="/" component={Home} />
       <Route path="/locations" component={LocationsContainer} />
       <Route path="/suggestLocation" component={SuggestLocation} />
+      <Route path="/admin" component={Admin} />
     </Route>
   </Router>
   , document.getElementById('app')

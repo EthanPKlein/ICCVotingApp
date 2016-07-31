@@ -1,21 +1,44 @@
-import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS} from '../constants/actionTypes';
+import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS, SEED_LOCATIONS} from '../constants/actionTypes';
 
 const locationReducer = function(initialState, action) {
 
   var reducer = [];
 
   reducer[GET_LOCATIONS]  = function () {
-    console.log("reducer is getting locations.");
-    console.log("action:");
-    console.log(action);
-    var newList = action.locations; // get data from action
-    var newTime = action.time;
-    var newDate = action.date;
+   console.log("reducer is getting locations.");
+   console.log("action:");
+   console.log(action);
+   var newList = action.locations; // get data from action
+   var newTime = action.time;
+   var newDate = action.date;
+
+   return {
+      locations: newList,
+      time: newTime,
+      date: newDate
+    };
+ }
+
+  reducer[SEED_LOCATIONS]  = function () {
+
+    var oldState = initialState;
+    var state = {};
+
+    $.getJSON('/data.json').done(function (data) {
+        localStorage.setItem('VoteApp', JSON.stringify(data));
+
+        var derp = JSON.parse(localStorage.getItem('VoteApp'));
+        console.log("seeded:");
+        console.log(derp);
+
+    });
+
+    console.log('seeded locations!');
 
     return {
-       locations: newList,
-       time: newTime,
-       date: newDate
+       locations: oldState.locations,
+       time: oldState.time,
+       date: oldState.date
      };
   }
 
@@ -53,6 +76,8 @@ const locationReducer = function(initialState, action) {
       ]}; // return new state
   }
 
+  console.log("action type:");
+  console.log(action.type);
   if (reducer[action.type]) {
     return reducer[action.type]();
   } else {

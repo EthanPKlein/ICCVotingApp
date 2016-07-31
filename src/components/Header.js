@@ -21,7 +21,7 @@ export default class Header extends React.Component {
                 <Link to="/suggestLocation" className="nav-link" href="#">Suggest a Location</Link>
               </li>
               <li>
-                <Link to="/" className="nav-link" href="#">Admin</Link>
+                <Link to="/admin" className="nav-link" href="#">Admin</Link>
               </li>
             </ul>
           </div>

@@ -5,7 +5,7 @@ import * as actions from '../actions/';
 import {bindActionCreators} from 'redux';
 import * as types from '../constants/actionTypes';
 import Locations from '../components/Locations';
-import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS} from '../constants/actionTypes';
+import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS, SEED_LOCATIONS} from '../constants/actionTypes';
 
 export default class LocationsContainer extends React.Component {
 
@@ -27,8 +27,10 @@ export default class LocationsContainer extends React.Component {
 
    var self = this;
    var store = this.props.store;
+
    $.getJSON('/data.json').done(function (data) {
       console.log("dispatching...");
+      var data = JSON.parse(localStorage.getItem('VoteApp'));
       store.dispatch({type:'GET_LOCATIONS', locations: data.locations, date: data.date, time: data.time});
    });
 
