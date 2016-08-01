@@ -15,6 +15,20 @@ export default class SuggestLocationContainer extends React.Component {
    this.addLocation = this.addLocation.bind(this);
  }
 
+ componentDidMount() {
+
+   var self = this;
+   var store = this.props.store;
+
+   $.getJSON('/data.json').done(function (data) {
+      // Not sure why, but the time it takes to resolve this promise is important somehow.
+      // Without doing so, no results return.
+      var data = JSON.parse(localStorage.getItem('VoteApp'));
+      store.dispatch({type:'GET_LOCATIONS', locations: data.locations, date: data.date, time: data.time});
+   });
+
+ }
+
  addLocation() {
 
    console.log("adding location in suggestLocationContainer");
@@ -34,6 +48,12 @@ export default class SuggestLocationContainer extends React.Component {
    // persist new state
    var state = store.getState();
    localStorage.setItem('VoteApp', JSON.stringify(state));
+
+   alert("Your location has been added!");
+   // TODO: do this more elegantly by changing child state
+   document.getElementById('name').value = '';
+   document.getElementById('address').value = '';
+   document.getElementById('image').value = '';
 
  }
 

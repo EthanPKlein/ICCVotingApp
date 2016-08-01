@@ -5,9 +5,7 @@ const locationReducer = function(initialState, action) {
   var reducer = [];
 
   reducer[GET_LOCATIONS]  = function () {
-   console.log("reducer is getting locations.");
-   console.log("action:");
-   console.log(action);
+
    var newList = action.locations;
    var newTime = action.time;
    var newDate = action.date;
@@ -27,13 +25,12 @@ const locationReducer = function(initialState, action) {
       let location = oldState.locations[i];
       let voteCast = false;
 
-      // vote already
+      // user has voted with this email already; reject it and let the user know
       if (location.votes.includes(action.email)) {
         alert("You have already voted with the email " + action.email + "!");
         return oldState;
       }
     }
-
 
       for (var i = 0; i < oldState.locations.length; i++) {
         let location = oldState.locations[i];
@@ -57,17 +54,28 @@ const locationReducer = function(initialState, action) {
       votes: []
     };
 
-    console.log(newLocation);
-    console.log("initialState.locations:");
-    console.log(initialState.locations);
+    // the backend would normally do this, but since there is no true back end
+    // for this app, find an unused Id and assign the new object it
+    var newId;
+
+    // push all the ids into an array.  TODO:  Use .map
+    var usedIds = [];
+    for (var j = 0; j < initialState.locations.length; j++) {
+      let location = initialState.locations[j];
+      usedIds.push(location.id);
+    }
+
+    var i = 0;
+    while (usedIds.includes(i)) {
+      i++;
+    }
+    newLocation.id = i;
 
     return {locations: [
         ...initialState.locations, newLocation
       ]};
   }
 
-  console.log("action type:");
-  console.log(action.type);
   if (reducer[action.type]) {
     return reducer[action.type]();
   } else {
