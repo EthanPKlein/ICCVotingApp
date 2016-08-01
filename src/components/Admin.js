@@ -25,7 +25,11 @@ export default class Admin extends React.Component {
     return(
       <div key={i}>
         <Location location={location} />
-        <AdminAction name={location.name} id={location.id} deleteLocation={this.props.deleteLocation}/>
+        <AdminAction name={location.name}
+        id={location.id}
+        votes={location.votes}
+        deleteLocation={this.props.deleteLocation}
+        resetVotes={this.props.resetVotes}/>
       </div>
     );
   }

@@ -3,3 +3,4 @@ export const ADD_VOTE = 'ADD_VOTE';
 export const GET_LOCATIONS = 'GET_LOCATIONS';
 export const SEED_LOCATIONS = 'SEED_LOCATIONS';
 export const DELETE_LOCATION = 'DELETE_LOCATION';
+export const RESET_VOTES = 'RESET_VOTES';

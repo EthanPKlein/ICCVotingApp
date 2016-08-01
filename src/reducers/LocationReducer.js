@@ -1,4 +1,4 @@
-import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS, SEED_LOCATIONS, DELETE_LOCATION} from '../constants/actionTypes';
+import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS, SEED_LOCATIONS, DELETE_LOCATION, RESET_VOTES} from '../constants/actionTypes';
 
 const locationReducer = function(initialState, action) {
 
@@ -86,6 +86,22 @@ const locationReducer = function(initialState, action) {
       let location = initialState.locations[i];
       if (action.id === location.id) {
         oldState.locations.splice(i,1);
+      }
+    }
+
+    return oldState;
+
+  }
+
+  reducer[RESET_VOTES]  = function () {
+    console.log("reducer is deleting location!");
+
+    var oldState = initialState;
+
+    for (var i = 0; i < oldState.locations.length; i++) {
+      let location = initialState.locations[i];
+      if (action.id === location.id) {
+        location.votes = [];
       }
     }
 
