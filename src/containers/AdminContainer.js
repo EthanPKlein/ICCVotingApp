@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import * as types from '../constants/actionTypes';
 import Locations from '../components/Locations';
 import Admin from '../components/Admin';
-import {ADD_LOCATION, ADD_VOTE, GET_LOCATIONS, SEED_LOCATIONS} from '../constants/actionTypes';
+import {GET_LOCATIONS, DELETE_LOCATION} from '../constants/actionTypes';
 
 export default class AdminContainer extends React.Component {
 
@@ -47,17 +47,16 @@ export default class AdminContainer extends React.Component {
 
 console.log("deleting location..." + id);
 
-  //  var store = this.props.store;
-  //  store.dispatch({
-  //    type: ADD_VOTE,
-  //    id: id,
-  //    email: email
-  //  });
-   //
-  //  // persist new state
-  //  var state = store.getState();
-  //  localStorage.setItem('VoteApp', JSON.stringify(state));
+   var store = this.props.store;
+   store.dispatch({
+     type: DELETE_LOCATION,
+     id: id
+   });
 
+   // persist new state
+   var state = store.getState();
+   localStorage.setItem('VoteApp', JSON.stringify(state));
+   alert("Venue has been deleted!");
  }
 
 

@@ -11,3 +11,7 @@ import * as types from '../constants/actionTypes';
  export function addVote(id, email) {
    return {type: types.ADD_VOTE, id: id, email: email};
  }
+
+ export function deleteLocation(id) {
+   return {type: types.DELETE_LOCATION, id: id};
+ }
