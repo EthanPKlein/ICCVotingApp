@@ -10,7 +10,7 @@ import Locations from './components/Locations';
 import SuggestLocation from './components/SuggestLocation';
 import LocationsContainer from './containers/LocationsContainer';
 import SuggestLocationContainer from './containers/SuggestLocationContainer';
-import Admin from './components/Admin';
+import AdminContainer from './containers/AdminContainer';
 
 const store = configureStore();
 
@@ -20,7 +20,7 @@ render(
       <Route path="/" component={Home} />
       <Route path="/locations" component={LocationsContainer} />
       <Route path="/suggestLocation" component={SuggestLocationContainer} />
-      <Route path="/admin" component={Admin} />
+      <Route path="/admin" component={AdminContainer} />
     </Route>
   </Router>
   , document.getElementById('app')
