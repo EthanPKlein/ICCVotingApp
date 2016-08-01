@@ -19,29 +19,6 @@ const locationReducer = function(initialState, action) {
     };
  }
 
-  reducer[SEED_LOCATIONS]  = function () {
-
-    var oldState = initialState;
-    var state = {};
-
-    $.getJSON('/data.json').done(function (data) {
-        localStorage.setItem('VoteApp', JSON.stringify(data));
-
-        var derp = JSON.parse(localStorage.getItem('VoteApp'));
-        console.log("seeded:");
-        console.log(derp);
-
-    });
-
-    console.log('seeded locations!');
-
-    return {
-       locations: oldState.locations,
-       time: oldState.time,
-       date: oldState.date
-     };
-  }
-
   reducer[ADD_VOTE]  = function () {
 
     var oldState = initialState;
@@ -52,7 +29,7 @@ const locationReducer = function(initialState, action) {
 
       // vote already
       if (location.votes.includes(action.email)) {
-        console.log("User has already voted!");
+        alert("You have already voted with the email " + action.email + "!");
         return oldState;
       }
     }

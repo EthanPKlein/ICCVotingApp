@@ -47,15 +47,18 @@ export default class LocationsContainer extends React.Component {
  addVote(id) {
 
    var email = document.getElementById('email').value;
-
-   console.log("adding Vote on LocationContainer! ID: " + id + ".  Email: " + email);
-
+   
    var store = this.props.store;
    store.dispatch({
      type: ADD_VOTE,
      id: id,
      email: email
    });
+
+   // persist new state
+   var state = store.getState();
+   localStorage.setItem('VoteApp', JSON.stringify(state));
+
  }
 
  render() {
