@@ -51,6 +51,7 @@ const locationReducer = function(initialState, action) {
       name: action.name,
       address: action.address,
       image: action.image,
+      description: action.description,
       votes: []
     };
 

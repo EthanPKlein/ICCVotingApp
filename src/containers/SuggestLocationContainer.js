@@ -33,16 +33,19 @@ export default class SuggestLocationContainer extends React.Component {
 
    console.log("adding location in suggestLocationContainer");
 
+   // TODO: read this from children elements
    var name = document.getElementById('name').value;
    var address = document.getElementById('address').value;
    var image = document.getElementById('image').value;
+   var description = document.getElementById('description').value;
 
    var store = this.props.store;
    store.dispatch({
      type: ADD_LOCATION,
      name: name,
      address: address,
-     image: image
+     image: image,
+     description: description
    });
 
    // persist new state
@@ -54,7 +57,7 @@ export default class SuggestLocationContainer extends React.Component {
    document.getElementById('name').value = '';
    document.getElementById('address').value = '';
    document.getElementById('image').value = '';
-
+   document.getElementById('description').value = '';
  }
 
  render() {
