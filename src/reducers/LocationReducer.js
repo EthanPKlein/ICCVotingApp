@@ -8,7 +8,7 @@ const locationReducer = function(initialState, action) {
    console.log("reducer is getting locations.");
    console.log("action:");
    console.log(action);
-   var newList = action.locations; // get data from action
+   var newList = action.locations;
    var newTime = action.time;
    var newDate = action.date;
 
@@ -47,10 +47,23 @@ const locationReducer = function(initialState, action) {
   }
 
   reducer[ADD_LOCATION]  = function () {
-    var newLocation = action.location; // get data from action
+
+    console.log("reducer is adding location!");
+
+    var newLocation = {
+      name: action.name,
+      address: action.address,
+      image: action.image,
+      votes: []
+    };
+
+    console.log(newLocation);
+    console.log("initialState.locations:");
+    console.log(initialState.locations);
+
     return {locations: [
         ...initialState.locations, newLocation
-      ]}; // return new state
+      ]};
   }
 
   console.log("action type:");

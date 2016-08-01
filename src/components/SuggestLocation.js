@@ -6,11 +6,17 @@ export default class SuggestLocation extends React.Component {
    super(props);
   }
 
-  handleSubmit(e) {
-     e.preventDefault();
-     console.log("submitting...");
-     //this.props.dispatchItem();
-     //this.setState({name: '', email: ''});
+  // handleSubmit(e) {
+  //    e.preventDefault();
+  //    console.log("submitting...");
+  //    //this.props.dispatchItem();
+  //    //this.setState({name: '', email: ''});
+  //  }
+
+   addLocation() {
+     //e.preventDefault();
+     console.log("adding location in suggestLocation");
+     this.props.addLocation();
    }
 
   render() {
@@ -20,7 +26,7 @@ export default class SuggestLocation extends React.Component {
         <h1>Suggest a new Venue</h1>
       </div>
         <p>Nothing appeal to you?  Suggest a new venue to your coworkers by filling out this form.</p>
-        <form>
+        <div>
 
           <fieldset className="form-group">
             <label htmlFor="name">Venue Name</label>
@@ -39,9 +45,9 @@ export default class SuggestLocation extends React.Component {
             <small className="text-muted">(Optional) submit the URL for an image depicting this venue.</small>
           </fieldset>
 
-          <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+          <button className="btn btn-primary" onClick={() => this.addLocation()}>Submit</button>
 
-        </form>
+        </div>
 
       </div>);
   }

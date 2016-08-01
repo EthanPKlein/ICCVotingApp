@@ -29,7 +29,8 @@ export default class LocationsContainer extends React.Component {
    var store = this.props.store;
 
    $.getJSON('/data.json').done(function (data) {
-      console.log("dispatching...");
+      // Not sure why, but the time it takes to resolve this promise is important somehow.
+      // Without doing so, no results return.
       var data = JSON.parse(localStorage.getItem('VoteApp'));
       store.dispatch({type:'GET_LOCATIONS', locations: data.locations, date: data.date, time: data.time});
    });
@@ -47,7 +48,7 @@ export default class LocationsContainer extends React.Component {
  addVote(id) {
 
    var email = document.getElementById('email').value;
-   
+
    var store = this.props.store;
    store.dispatch({
      type: ADD_VOTE,
